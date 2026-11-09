@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Meesho Label Crop</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>Meesho Label Crop</h1><p>Upload Meesho label PDFs, pick settings, get a sorted print-ready PDF. Everything runs in your browser; files are never uploaded.</p></header>
+<main>
+  <section class="left">
+    <div id="drop" class="drop"><b>Drop PDF files here</b> or <label class="link">Browse<input id="file" type="file" accept="application/pdf" multiple hidden></label></div>
+    <ul id="files"></ul>
+    <div id="summary" class="card" hidden></div>
+    <div class="actions">
+      <button id="go" disabled>Generate PDF</button>
+      <span id="status"></span>
+    </div>
+    <div id="results"></div>
+    <iframe id="preview" hidden></iframe>
+  </section>
+  <aside class="card">
+    <h2>Settings</h2>
+    <h3>Sort labels</h3>
+    <label><input type="checkbox" id="sortCourier" checked> Sort courier wise</label>
+    <label class="sub"><input type="checkbox" id="valmoSame" checked> Treat Valmo Plus / Valmo Express same as Valmo</label>
+    <label><input type="checkbox" id="sortSold"> Sort by Sold By</label>
+    <label><input type="checkbox" id="multiBottom" checked> Multi-quantity orders at bottom</label>
+    <h3>Invoice</h3>
+    <label><input type="checkbox" id="keepInvoice" checked> Keep invoice</label>
+    <label class="sub"><input type="radio" name="crop" id="cropWs" checked> Remove white space (fit 4x4)</label>
+    <label class="sub"><input type="radio" name="crop" id="cropNo"> No crop (full page)</label>
+    <h3>On the label</h3>
+    <label><input type="checkbox" id="dateTime" checked> Print date &amp; time on label</label>
+    <label><input type="checkbox" id="pageNo"> Print page no.</label>
+    <label><input type="checkbox" id="storeQr"> Add store link QR</label>
+    <input type="text" id="storeLink" placeholder="https://meesho.com/yourstore" hidden>
+    <h3>Output</h3>
+    <label><input type="checkbox" id="merge" checked> Merge files</label>
+    <label><input type="checkbox" id="a4"> Print on A4 (4 labels per page, 2 with invoice)</label>
+    <label><input type="checkbox" id="summaryPage" checked> Add summary page at end</label>
+    <label><input type="checkbox" id="repeatCust"> Repeat customer orders list</label>
+    <label><input type="checkbox" id="picklist" checked> Add picklist page after
+      <input type="number" id="picklistN" value="10" min="1" class="num"> orders</label>
+  </aside>
+</main>
+<script src="lib/pdf.min.js"></script>
+<script src="lib/pdf-lib.min.js"></script>
+<script src="lib/qrcode.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

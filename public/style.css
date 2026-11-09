@@ -1,0 +1,48 @@
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.4 system-ui,Segoe UI,Arial,sans-serif;background:#f4f6f8;color:#1b2b34}
+header{background:#0b4a6b;color:#fff;padding:16px 24px}
+header h1{margin:0 0 4px;font-size:22px}header p{margin:0;opacity:.85;font-size:13px}
+main{display:flex;gap:20px;padding:20px;max-width:1100px;margin:auto;flex-wrap:wrap}
+.left{flex:1 1 480px;min-width:0}
+aside{flex:0 0 330px}
+.card{background:#fff;border-radius:10px;padding:16px;box-shadow:0 1px 4px #0002}
+.drop{border:2px dashed #7aa;border-radius:10px;padding:34px 16px;text-align:center;background:#fff}
+.drop.over{background:#e3f3fb;border-color:#0b4a6b}
+.link{color:#0b6aa6;text-decoration:underline;cursor:pointer}
+ul{list-style:none;padding:0;margin:12px 0}
+li{display:flex;justify-content:space-between;gap:8px;background:#fff;padding:8px 12px;border-radius:8px;margin-bottom:6px;box-shadow:0 1px 2px #0002}
+li button{border:0;background:none;color:#c33;cursor:pointer;font-size:16px}
+h2{margin:0 0 8px;font-size:17px}
+h3{margin:14px 0 6px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#678}
+aside label{display:block;margin:5px 0}
+aside label.sub{margin-left:22px}
+input[type=text]{width:100%;padding:6px;margin-top:4px}
+.num{width:56px}
+.actions{display:flex;align-items:center;gap:12px;margin:14px 0}
+button#go{background:#0b4a6b;color:#fff;border:0;border-radius:8px;padding:11px 22px;font-size:15px;cursor:pointer}
+button#go:disabled{opacity:.4;cursor:default}
+#results a{display:inline-block;margin:0 8px 8px 0;background:#1a8a4a;color:#fff;padding:9px 16px;border-radius:8px;text-decoration:none}
+table{border-collapse:collapse;width:100%;font-size:13px;margin-top:8px}
+td,th{border:1px solid #cdd;padding:3px 6px;text-align:left}
+th{background:#eef3f6}
+iframe{width:100%;height:640px;border:1px solid #bbb;border-radius:8px;margin-top:8px;background:#fff}
+.err{color:#c33}
+input[type=checkbox],input[type=radio]{width:18px;height:18px;vertical-align:-3px;margin-right:6px}
+aside label{padding:3px 0}
+@media (max-width:760px){
+  header{padding:12px 14px}header h1{font-size:19px}
+  main{padding:10px;gap:12px}
+  .left{display:contents}
+  .drop{order:1;padding:26px 12px}
+  #files{order:2;margin:0}
+  #summary{order:3;overflow-x:auto}
+  aside{order:4;flex:1 1 100%}
+  .actions{order:5;margin:0}
+  #results{order:6}
+  button#go{width:100%;padding:14px;font-size:16px}
+  #results a{display:block;text-align:center;margin-right:0;padding:13px}
+}
+@media (max-width:760px){
+  .drop,#files,#summary,.actions,#results,#preview{flex:1 1 100%;width:100%}
+  .actions{flex-wrap:wrap}
+}
